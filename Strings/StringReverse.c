@@ -1,42 +1,36 @@
-/* An implementation of a basic string reverse algorithm.
-	
-	By: Asad Zia
+/*
+*
+* A string reverse algorithm in C using O(n) time.
+*
+* Created by: Asad Zia
 */
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
-/*
-* The function for reversing the string
-*/
-void do_rev (char* x) {
-	char* ptr;
-	int i, count = 0;
+void reverse (char str[])
+{
+	int i, j;
 
-	while (1) {
-		if (*x == '\0') {
-			break;
-		}
-		x++;
-		count++;
-	}
-		x--;
+	j = strlen(str) - 1;
+	i = 0;
 
-	for (i = 0; i < count; i++) {
-		*ptr = *x;
-		printf("%c", *ptr);
-		x--;
-		ptr++;
+	while (i < j)
+	{
+		char temp = str[i];
+		str[i] = str[j];
+		str[j] = temp;
+		--j;
+		++i;
 	}
 }
 
-/*
-* The main function
-*/
-int main () {
-	char *str = "Hello";
-	char* str_result;
-	printf("%s\n", str);
-	do_rev(str);
+int main ()
+{
+	char str[20] = "Hello World!";
+	printf("Original String: %s\n", str);
+	reverse(str);
+	printf("Reversed String: %s\n", str);
 	return 0;
 }
