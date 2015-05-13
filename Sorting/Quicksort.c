@@ -12,7 +12,7 @@ int partition( int[], int, int);
 /*
 * The main function
 */
-void main() 
+int main() 
 {
 	int a[] = { 7, 12, 1, -2, 0, 15, 4, 11, 9};
 
@@ -26,6 +26,8 @@ void main()
 	printf("\n\nSorted array is:  ");
 	for(i = 0; i < 9; ++i)
 		printf(" %d ", a[i]);
+
+  return 0;
 }
 
 /*
@@ -49,16 +51,34 @@ void quickSort( int a[], int l, int r)
 */
 int partition( int a[], int l, int r) {
    int pivot, i, j, t;
-   pivot = a[l];
-   i = l; j = r+1;
-		
-   while(1)
-   {
-   	do ++i; while( a[i] <= pivot && i <= r );
-   	do --j; while( a[j] > pivot );
-   	if( i >= j ) break;
-   	t = a[i]; a[i] = a[j]; a[j] = t;
-   }
-   t = a[l]; a[l] = a[j]; a[j] = t;
-   return j;
+    
+    pivot = l;
+    i = l;
+    j = r;
+
+    while (i < j)
+    {
+        while (a[i] <= a[pivot] && i < r)
+        {
+          i++;
+        } 
+
+        while (a[j] > a[pivot])
+        {
+          j--;
+        }
+
+        if (i < j) {
+          t = a[i];
+          a[i] = a[j];
+          a[j] = t;
+        }
+    }
+
+    t = a[pivot];
+    a[pivot] = a[j];
+    a[j] = t;
+
+    return j;
 }
+
