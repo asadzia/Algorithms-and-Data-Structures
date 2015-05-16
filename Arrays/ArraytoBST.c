@@ -21,7 +21,7 @@ struct node
 struct node* ArraytoBST (int arr[], int start, int end)
 {
 	if (start > end)
-	{
+	{	
 		return NULL;
 	}
 
@@ -49,16 +49,15 @@ struct node* ArraytoBST (int arr[], int start, int end)
 	return x;
 }
 
-void inorder_print (struct node* x)
+void preorder_print (struct node* x)
 {
 	if (x == NULL)
 	{
 		return;
 	}
-
-	inorder_print(x->left);
 	printf("%d ", x->data);
-	inorder_print(x->right);
+	preorder_print(x->left);
+	preorder_print(x->right);
 }
 
 /*
@@ -67,9 +66,10 @@ void inorder_print (struct node* x)
  int main ()
  {
  	struct node *tree;
- 	int arr[] = {5, 2, 7, 9, 1, 4, 7, 2};
+ 	int arr[] = {1, 2, 3, 4, 5, 6, 7, 8};
  	int size = sizeof(arr) / sizeof(arr[0]);
  	tree = ArraytoBST(arr, 0, size - 1);
- 	inorder_print(tree);
+ 	printf("Preoder Print:\n");
+ 	preorder_print(tree);
  	return 0;
  }
