@@ -38,7 +38,7 @@ struct node* ArraytoBST (int arr[], int start, int end)
 	/* create the root/parent */
 	int mid = (start + end) / 2;
 	newNode->data = arr[mid];
-	x = newNode;
+	struct node* x = newNode;
 
 	/* create the right child */
 	x->left = ArraytoBST(arr, start, mid - 1);
