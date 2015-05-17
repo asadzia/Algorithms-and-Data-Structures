@@ -33,10 +33,10 @@ int nthFromEnd (struct node* x, int n)
 		current = current->next;
 		count++;
 	}
+	printf("%d", count);
+	int length = count - n;
 
-	int length = count - n + 1;
-
-	while (length - 1 != 0)
+	while (length != 0)
 	{
 		current2 = current2->next;
 		length--;
