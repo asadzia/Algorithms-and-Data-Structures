@@ -251,3 +251,41 @@ int main ()
 	deleteMinHeap(&myHeap);
 	return 0;
 }
+
+/*
+A dynamically allocated heap can also be used.
+Simply change the initialize function to:
+
+
+struct minHeap* initialize (struct minHeap* x)
+{
+	x = malloc(sizeof(struct minHeap));
+	x->size = 0;
+	return x;
+}
+
+And then change the main function to:
+
+int main () 
+{
+	struct minHeap* myHeap = NULL;
+	int arr[10] = {6, 8, 2 ,4 , 1, 3, 9, 10, 5, 7};
+	int size = 10;
+	myHeap = initialize(myHeap);
+	buildHeap(myHeap, arr, size);
+	printing(myHeap);
+	printf("size: %d\n", myHeap->size);
+	printf("Max: %d\n", getMax(myHeap, 0));
+	insert(myHeap, 11);
+	printing(myHeap);
+	printf("size: %d\n", myHeap->size);
+	printf("Max: %d\n", getMax(myHeap, 0));
+	deleteNode(myHeap);
+	printing(myHeap);
+	deleteMinHeap(myHeap);
+	return 0;
+}
+
+It is important to assign the pointer variable to the return value of the initialize function.
+Otherwise the memory allocated cannot be accessed bu the myHeap pointer, resulting in a dangling pointer.
+*/
