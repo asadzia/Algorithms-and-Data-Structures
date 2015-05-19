@@ -7,27 +7,25 @@
 */
 
 #include <stdio.h>
+#include <limits.h>
 
 void findVal (int arr[], int size)
 {
-	int i, temp = arr[0], temptwo = arr[0];
+	int i, temp = INT_MIN, temptwo = INT_MIN;
 
 	for (i = 0; i < size; i++)
 	{
-		if (temp < arr[i])
+		if (arr[i] > temp)
 		{
+			temptwo = temp;
 			temp = arr[i];
 		}
-	}
 
-	for (i = 0; i < size; i++)
-	{
-		if (arr[i] > temptwo && arr[i] != temp)
+		else if (arr[i] > temptwo && arr[i] != temp)
 		{
 			temptwo = arr[i];
 		}
 	}
-
 	printf("Largest: %d\nSecond Largest: %d\n", temp, temptwo);
 }
 
