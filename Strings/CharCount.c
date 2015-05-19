@@ -4,47 +4,47 @@
 */
 
 
+
 #include <stdio.h>
 
-int main () 
+/*
+* A fcuntion to count the number of characters
+*/
+void countChars (char* str)
 {
-	char str [100];
-	char temp[100];
-	int i, j, count = 0, it = 0, flag = 0;
-	fgets(str, 100, stdin);
+	int max = 0, i;
+	char max_char;
+	char temp = str[0];
+	int count = 0;
 
-	for (i = 0; str[i] != '\n'; i++) 
+	for (i = 0; str[i] != '\0'; i++)
 	{
-		for (j = 0; str[j] != '\n'; j++) 
+		if (temp == str[i])
 		{
-			if (str[i] == str[j]) 
-			{
-				count++;
-			}
+			count++;
 		}
-		
-		for (j = 0; j < 100; j++)
-		 {
-			if (str[i] == temp[j]) 
+		else
+		{
+			if (count > max)
 			{
-				count = 0;
-				flag = 1;
-				break;
+				max = count;
+				max_char = temp;
 			}
-			else
-			{
-				flag = 0;
-			}
+
+			count = 1;
+			temp = str[i];
 		}
-		
-		if (flag == 0)
-		 {
-			temp[it] = str[i];
-			printf("%d %c\n",count, str[i]);
-			count = 0;
-			it++;
-		}
-	
 	}
+
+	printf("Maximum recurring character in the string is %c. It occurs %d times.", max_char, max);
+}
+
+/*
+* The main function
+*/
+int main ()
+{
+	char* str = "aabbbccccddee";
+	countChars(str);
 	return 0;
 }
