@@ -16,6 +16,9 @@ struct node
 	struct node* next;
 };
 
+/*
+* A function to create a new node
+*/
 struct node* newNode (struct node* x)
 {
 	x = (struct node*)malloc(sizeof(struct node));
@@ -29,11 +32,13 @@ struct node* newNode (struct node* x)
 	return x;
 }
 
+/*
+* A function to print the required order of the list
+*/
 void printNonConsecutive (struct node* x)
 {
 	struct node *current = x;
 	int temp = INT_MIN, flag = 0;
-	//current = current->next;
 
 	while (current != NULL)
 	{
@@ -53,6 +58,21 @@ void printNonConsecutive (struct node* x)
 		}
 		current = current->next;
 		flag = 0;
+	}
+}
+
+/*
+* A functtion to free the list
+*/
+void freeList (struct node* x)
+{
+	struct node* cur = x, *temp;
+
+	while (cur != NULL)
+	{
+		temp = cur->next;
+		free(cur);
+		cur = temp;
 	}
 }
 
@@ -99,6 +119,6 @@ int main ()
 	nodenine->data = 15;
 
 	printNonConsecutive(nodeone);
+	freeList(nodeone);
 	return 0;
-
 }
