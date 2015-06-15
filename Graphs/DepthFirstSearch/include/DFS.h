@@ -22,7 +22,7 @@ class Graph
 
   /* The constructor */
 	Graph(int v);
-	/* tje destructor */
+	/* the destructor */
 	~Graph();
 	/* the function for adding an edge */
 	void addEdge(int src, int dest);
