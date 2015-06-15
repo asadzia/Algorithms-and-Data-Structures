@@ -20,7 +20,7 @@ class Graph
 	/* a helper function for implementing DFS */
 	void DFSHelper(int x, bool visitedNodes[]);
 
-  /* The constructor */
+        /* The constructor */
 	Graph(int v);
 	/* the destructor */
 	~Graph();
