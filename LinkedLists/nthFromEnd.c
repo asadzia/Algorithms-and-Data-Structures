@@ -123,3 +123,29 @@ int main ()
 	freeList(one);
 	return 0;
 }
+
+/*
+Alternative approach using two pointers:
+
+void nthfromEnd (struct node* list, int n)
+{
+	struct node* main_ptr = list;
+	struct node* ref_ptr = list;
+
+	int count = 0;
+
+	while (count < n)
+	{
+		ref_ptr = ref_ptr->next;
+		count++;
+	}
+
+	while (ref_ptr->next != NULL)
+	{
+		main_ptr = main_ptr->next;
+		ref_ptr = ref_ptr->next;
+	}
+
+	cout << "The nth node from the end is " <<  main_ptr->data << endl;
+}
+*/
