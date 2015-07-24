@@ -61,9 +61,9 @@ int printNodes (node* x, int n)
 	
 	/* a bottom up approach is then used to check if the height is equal to n, then we print the data*/ 
 	if (l == n || r == n)
-{
+	{
 	printf("%d ", x->data);
-}
+	}
 
 return (min(l, r) + 1);
 }
