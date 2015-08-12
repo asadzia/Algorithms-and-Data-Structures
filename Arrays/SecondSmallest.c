@@ -3,7 +3,6 @@
 * An algorithm to find the second Smallest element in an array in C.
 *
 * Created by: Asad zia
-*
 */
 
 #include <stdio.h>
