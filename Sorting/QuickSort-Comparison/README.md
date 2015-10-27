@@ -7,4 +7,4 @@ The three approaches used in the three programs are as follows:
 - Choosing the last element as the pivot (Faster but only a little)
 - Choosing the median element from the set {array[first], array[middle], array[last]}. (Fastest)
 
-[!alt tag](https://www.nczonline.net/images/wp-content/uploads/2012/11/quicksort_21.png)
+![alt tag](https://www.nczonline.net/images/wp-content/uploads/2012/11/quicksort_21.png)
