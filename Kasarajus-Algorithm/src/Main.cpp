@@ -18,7 +18,7 @@ int main ()
 	string line;
 	int source, destination;
 
-	ifstream infile("../Data/SCC.txt");
+	ifstream infile("../Data/SCC2.txt");
 
 	/* initialize the Graph */
 	Graph myGraph (VERTICES);
