@@ -63,4 +63,4 @@ The algorithm itself is now:
               relax( u, v, w )
 
 
-![alt tag] (https://www.cs.indiana.edu/~achauhan/Teaching/B403/LectureNotes/images/10-dijkstra.jpgf)
+![alt tag] (http://cs.smith.edu/~streinu/Teaching/Courses/274/Spring98/Projects/Philip/fp/dijkstra.jpg)
