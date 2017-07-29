@@ -1,17 +1,14 @@
-/* The running medium problem*/
+/* The running median problem*/
 
 #include <iostream>
 #include <queue>
 #include <vector>
 #include <functional>
 
-#define DIVISION_POINT 100
 #define SIZE 9
 
 using namespace std;
 
-
-// Mid point is 100
 class RunningMedianAlgorithm
 {
 	private:
