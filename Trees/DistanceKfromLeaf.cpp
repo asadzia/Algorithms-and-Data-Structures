@@ -86,3 +86,24 @@ int main()
  
     return 0;
 }
+
+/*
+An easier way to do it:
+
+void printatK (struct node* tree, int K)
+{
+	if (tree == NULL)
+	{
+		return;
+	}
+
+	if (K == 0)
+	{
+		printf("%d ", tree->data);
+	}
+
+	printatK(tree->left, K - 1);
+	printatK(tree->right, K - 1);
+}
+
+*/
