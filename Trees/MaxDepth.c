@@ -90,3 +90,30 @@ int main ()
 	printf("Maximum depth: %d\n", result);
 	return 0;
 }
+
+
+/*
+A more intuitive way to write the maxDepth function. (Works like the factorial function)
+
+
+int maxDepth (struct node* x)
+{
+	if (x == NULL)
+	{
+		return 0;
+	}
+
+	int left = maxDepth(x->left) + 1;
+	int right = maxDepth(x->right) + 1;
+	
+	if (left > right)
+	{
+	  return left;
+	}
+	else
+	{
+	  return right;
+	}
+}
+
+*/
