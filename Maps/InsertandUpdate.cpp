@@ -39,3 +39,50 @@ int main (int argc, char** args)
 
 	return 0;
 }
+
+/*
+Or just use the normal Assign approach to update the map
+
+#include <iostream>
+#include <string>
+#include <utility>
+#include <map>
+
+using namespace std;
+
+void addToMap (map<string, int>& x, string word)  // Note: The Reference is important here. Otherwise the map data is statically stored and would require the addToMap function to have a return value as a map.
+{
+	map<string,int>::iterator it;
+	it = x.find(word);
+    
+	if (it != x.end())
+	{
+		cout << "Found! Increment Acount" << endl;
+		it->second++;
+	}
+	else
+	{
+		x[word] = 1;
+		cout << "Insert new value " << word <<  endl;
+	}
+}
+
+int main (int argc, char** args)
+{
+	map<string,int> myMap;
+	addToMap(myMap, "asad");
+	addToMap(myMap, "asad");
+	addToMap(myMap, "asad");
+	addToMap(myMap, "asad");
+	addToMap(myMap, "lala");
+	addToMap(myMap, "lala");
+	addToMap(myMap, "lala");
+
+	
+
+	cout << myMap.find("lala")->second << endl;
+
+	return 0;
+}
+
+*/
