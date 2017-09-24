@@ -65,4 +65,4 @@ The algorithm itself is now:
               relax( u, v, w )<br />
 
 
-![Alt Text]("http://cs.smith.edu/~streinu/Teaching/Courses/274/Spring98/Projects/Philip/fp/dijkstra.jpg")
+![Alt Text] (http://cs.smith.edu/~streinu/Teaching/Courses/274/Spring98/Projects/Philip/fp/dijkstra.jpg)
