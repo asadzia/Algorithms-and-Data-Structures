@@ -65,4 +65,7 @@ The algorithm itself is now:
               relax( u, v, w )<br />
 
 
-[[http://algo.ics.hawaii.edu/~nodari/teaching/f15/Notes/Topic-18/Fig-24-6-Dijkstra-Example.jpg]]
+<p align="center">
+  <img src="http://algo.ics.hawaii.edu/~nodari/teaching/f15/Notes/Topic-18/Fig-24-6-Dijkstra-Example.jpg" width="350"/>
+  <img src="http://algo.ics.hawaii.edu/~nodari/teaching/f15/Notes/Topic-18/Fig-24-6-Dijkstra-Example.jpg" width="350"/>
+</p>
