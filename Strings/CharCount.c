@@ -48,3 +48,41 @@ int main ()
 	countChars(str);
 	return 0;
 }
+
+
+/*
+A C++ Implmentation
+
+#include <iostream>
+#include <string>
+#include <map>
+
+using namespace std;
+
+int main ()
+{
+    map<char, int> temp;
+    string text = "hello world";
+
+    for (int i = 0; i < text.length(); ++i)
+    {
+        if (temp.find(text[i]) == temp.end())
+        {
+            temp[text[i]] = 1;
+        }
+        else
+        {
+            temp[text[i]] += 1;
+        }
+    }
+
+    map<char, int>::iterator it;
+
+    for (it = temp.begin(); it != temp.end(); it++)
+    {
+        cout << it->first << " " << it->second << endl;
+    }
+
+    return 0;
+
+*/
