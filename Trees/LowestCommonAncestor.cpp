@@ -21,6 +21,9 @@ node *lca(node *root, int v1,int v2)
         return NULL;
     }
     
+    // if both nodes are less than or both are greater than the root, then we can move down left or right accordingly.
+    // if one is greater and the other is smaller than the root then we can stop and return because that is the LCA.
+   
     if (root->data > v1 && root->data > v2)
     {
         root = lca(root->left, v1, v2);
