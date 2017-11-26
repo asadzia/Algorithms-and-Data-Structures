@@ -126,3 +126,54 @@ int main()
  
     return 0;
 }
+
+/*
+Another approach:
+
+bool checkSub (node* root, node* sub)
+{
+    if (root == NULL)
+    {
+        return false;
+    }
+
+    if (root->data > sub->data)
+    {
+        checkSub(root->left, sub);
+    }
+    else if (root->data < sub->data)
+    {
+        checkSub(root->right, sub);
+    }
+    else
+    {
+        checkSub(root->right, sub->right);
+        checkSub(root->left, sub->left);
+    }
+
+    return true;
+}
+
+bool isSubtree (node* root, node* sub)
+{
+    if (root == NULL && sub == NULL)
+    {
+        return true;
+    }
+
+    else if (root == NULL && sub != NULL)
+    {
+        return false;
+    }
+
+    else if (root != NULL && sub == NULL)
+    {
+        return true;
+    }
+    else
+    {
+        return checkSub (root, sub);
+    }
+}
+
+*/
