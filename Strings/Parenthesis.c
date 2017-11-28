@@ -156,3 +156,98 @@ int main ()
 	freeStack(&myStack);
 	return 0;
 }
+
+/*
+
+A C++ Approach:
+
+#include <iostream>
+#include <string>
+#include <utility>
+#include <vector>
+
+using namespace std;
+
+struct stack
+{
+    vector<char> arr;
+};
+
+void push (stack &x, char data)
+{
+    x.arr.push_back(data);
+}
+
+char pop (stack &x)
+{
+    char temp = x.arr[x.arr.size() - 1];
+    x.arr.pop_back();
+    return temp;
+}
+
+bool parenthesis (char s, char e)
+{
+    if (s == '(' && e == ')')
+    {
+        return true;
+    }
+
+    if (s == '{' && e == '}')
+    {
+        return true;
+    }
+
+    if (s == '[' && e == ']')
+    {
+        return true;
+    }
+
+    return false;
+}
+
+bool check (stack &x, string str)
+{
+    for (int i = 0; str[i] != '\0'; ++i)
+    {
+        if (str[i] == '(' || str[i] == '{' || str[i] == '[')
+        {
+            push(x, str[i]);
+            continue;
+        }
+
+        if (str[i] == ')' || str[i] == '}' || str[i] == ']')
+        {
+            char temp = pop(x);
+            bool result = parenthesis(temp, str[i]);
+
+            if (!result)
+            {
+                cout << "UNBLAANCED" << endl;
+                return false;
+            }
+        }
+    }
+
+    if (x.arr.size() > 0)
+    {
+        cout << "UNBALANCED" << endl;
+        return false;
+    }
+
+    return true;
+}
+
+int main ()
+{
+  stack x;
+  string str = "(([[]])){}";
+  
+  if (check(x, str))
+  {
+    cout << "GOOD" << endl;
+  }
+  
+  return 0;
+}
+
+*/
