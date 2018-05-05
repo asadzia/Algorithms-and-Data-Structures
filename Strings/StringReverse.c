@@ -34,3 +34,35 @@ int main ()
 	printf("Reversed String: %s\n", str);
 	return 0;
 }
+
+/*
+RECURSIVE SOLUTION
+
+#include <iostream>
+#include <string>
+
+using namespace std;
+
+void reverseString (string str, int x, int y)
+{
+  if (x > y)
+  {
+        cout << str << endl;
+    return;
+  }
+
+    char temp = str[x];
+    str[x] = str[y];
+    str[y] = temp;
+    reverseString(str, x+1, y-1);
+}
+
+int main ()
+
+{
+  string str = "HEllo";
+  reverseString(str, 0, str.length() - 1);
+  return 0;
+}
+
+*/
