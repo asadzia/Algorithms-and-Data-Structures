@@ -63,6 +63,9 @@ int main ()
 {
     map<char, int> temp;
     string text = "hello world";
+    
+    char max;
+    max_char = 0;
 
     for (int i = 0; i < text.length(); ++i)
     {
@@ -74,6 +77,13 @@ int main ()
         {
             temp[text[i]] += 1;
         }
+	
+	// for returning the maximum character count in the string
+	if (temp[str[i] > max_char)
+	{
+	   max_char = temp[str[i]];
+	   max = str[i];
+	}
     }
 
     map<char, int>::iterator it;
