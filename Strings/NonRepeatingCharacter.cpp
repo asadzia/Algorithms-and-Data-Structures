@@ -86,3 +86,44 @@ void first_NonRepeatingChar (string word)
 	}
 }
 */
+
+/*
+AN EVEN EASIER APPROACH
+
+#include <iostream>
+#include <string>
+#include <map>
+
+using namespace std;
+
+
+
+int main ()
+{
+	string str = "aaaabbbbbccccudddd";
+
+	char prev = '\0';
+	int count = 99999;
+
+	for (int i = 0 ; str[i] != '\0'; ++i)
+	{
+		if (str[i] != prev)
+		{
+			if (count <= 1)
+			{
+				cout << "NON REPEATING! " << count << " " << prev << endl;
+				break;
+			}
+			else
+			{
+				count = 0;
+				prev = str[i];
+			}
+		}
+		count++;
+	}
+	return 0;
+}
+
+
+*/
