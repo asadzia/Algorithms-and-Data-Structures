@@ -56,74 +56,66 @@ int main ()
 }
 
 /*
-[COMMENT: This approach is suitable for shorter strings and uses an O(n) approach.
- However, for a longer string, it would take time. It is much better to store the
- index of the string by traversing it once and then traverse the Count Map instead]
 
-void first_NonRepeatingChar (string word)
-{
-	map<char, int> table;
-	bool flag = false;
-
-	for (int i = 0; i < word.length(); ++i)
-	{
-		table[word[i]]++;
-	}
-
-	for (int i = 0; i < word.length(); ++i)
-	{
-		if (table[word[i]] == 1)
-		{
-			cout << "First Non-Repeating Character: " << word[i] << endl;
-			flag = true;
-			break;
-		}
-	}
-	
-	if (flag == false)
-	{
-	    cout << "No Non-Repeating Character found!" << endl;
-	}
-}
-*/
-
-/*
-AN EVEN EASIER APPROACH
 
 #include <iostream>
 #include <string>
-#include <map>
+#include <vector>
+#include <utility>
+#include <climits>
 
 using namespace std;
 
+// First int is the index and second is the count of the character
 
+void print (vector<pair<int, int>> vc)
+{
+  for (int i = 0; i < vc.size(); ++i)
+  {
+    cout << vc[i].second;
+  }
+}
 
 int main ()
 {
-	string str = "aaaabbbbbccccudddd";
+	vector<pair<int, int>> vc (CHAR_MAX, make_pair(0, 0));
 
-	char prev = '\0';
-	int count = 99999;
+	string str =  "tutorial cup";
 
-	for (int i = 0 ; str[i] != '\0'; ++i)
+	for (int i = 0; i < str.length(); ++i)
 	{
-		if (str[i] != prev)
+		vc[str[i]].second++;
+		if (vc[str[i]].second == 1)
 		{
-			if (count <= 1)
+			vc[str[i]].first = i;
+		}
+	}
+
+	char min_char;
+	int index = INT_MAX;
+
+	for (int i = 0; i < CHAR_MAX; i++)
+	{
+		if (vc[i].second == 1)
+		{
+			if (vc[i].first < index)
 			{
-				cout << "NON REPEATING! " << count << " " << prev << endl;
-				break;
-			}
-			else
-			{
-				count = 0;
-				prev = str[i];
+				min_char = (char)i;
+				index = vc[i].first;
 			}
 		}
-		count++;
 	}
+
+	if (index == INT_MAX)
+	{
+		cout << "No non-repeating character found" << endl;
+	}
+	else
+	{
+		cout << min_char << " found at position " << index << endl;
+	}
+
 	return 0;
 }
-
 
 */
