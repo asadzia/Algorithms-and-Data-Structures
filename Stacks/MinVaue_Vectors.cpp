@@ -80,3 +80,81 @@ int main ()
 
 	return 0;
 }
+
+
+/*
+
+With Exception Handling
+
+#include <iostream>
+#include <vector>
+
+using namespace std;
+
+class Stack 
+{
+	private:
+
+		vector<int> min;
+		int size;
+
+	public:
+
+		Stack (int size)
+		{
+			this.size = size;
+		}
+
+		void push(int val)
+		{
+			try
+			{
+				if (min.size() >= size)
+				{
+					throw out_of_range("Stack overflow");
+				}
+
+				if (min.size() == 0)
+				{
+					min.push_back(val);
+				}
+				else
+				{
+					if (val > min[min.size() - 1])
+					{
+						int temp = min[min.size() - 1];
+						min[min.size() - 1] = val;
+						min.push_back(temp);
+					}
+					else
+					{
+						min.push_back(val);
+					}
+				}
+			}
+			catch (Exception e)
+			{
+				cout << e.what() << endl;
+			}			
+		}
+
+		int pop ()
+		{
+			try
+			{					
+				if (min.size() <= 0)
+				{
+					throw out_of_range("Stack Underflow");	
+				}
+
+				return min.pop_back();
+
+			}
+			catch (Exception e)
+			{
+				cout << e.what() << endl;
+			}
+		} 
+	}
+	
+	*/
