@@ -61,8 +61,8 @@ class RunningMedianAlgorithm
 
 		void rebalance()
 		{
-		    while (Qtwo.size() > Qone.size() + 1)
-		    {
+		    //while (Qtwo.size() > Qone.size() + 1)
+		    //{
     			if (Qone.size() > Qtwo.size() + 1)
     			{	
     				int x = Qone.top();
@@ -75,7 +75,7 @@ class RunningMedianAlgorithm
     				Qtwo.pop();
     				Qone.push(x);
     			}
-		    }
+		    //}
 			return;
 		}
 
