@@ -13,7 +13,7 @@ class RunningMedianAlgorithm
 {
 	private:
 		priority_queue<int, vector<int>, greater<int>> Qone;	//min heap for higher portion of numbers
-		priority_queue<int> Qtwo;								//max heap for lower portion of numbers
+		priority_queue<int> Qtwo;				//max heap for lower portion of numbers
 
 	public:
 		static const int length = SIZE;
