@@ -47,44 +47,46 @@ Explanation 2:
     */
     
     vector<int> maxset(vector<int> &A) {
-    int sum = 0;
-    int length = 0;
-    int index = 0;
-    int max_sum = 0;
-    int min_index = 0;
+    long long sum = 0;
+    int len = 0;
+    int end_idx;
+    long long max_sum = 0;
+    int min_idx;
     int max_len = 0;
+    int end = 0;
     
     for (int i = 0; i < A.size(); ++i) {
-        if (A[i] >= 0) { // for cases like [0, 0, -1, 0] where the answer is [0 , 0]
+        if (A[i] >= 0) { // include 0 to handle cases like [0, 0, -1, 0] where the answer is [0, 0]
             sum += A[i];
-            length++;
-            if (i != A.size() - 1) { 
-                continue;
+            len++;
+            
+            if (sum > max_sum) {
+                max_len = len;
+                max_sum = sum;
+                end_idx = i;
+                min_idx = end_idx + 1 - len;
             }
+            
+            if (sum == max_sum && max_len < len) {
+                max_len = len;
+                end_idx = i;
+                min_idx = end_idx + 1 - len;
+            }
+            
+            continue;
         }
         
-        index = i - length;
-        
-        if (sum > max_sum) {
-            max_sum = sum;
-            min_index = index;
-            max_len = length;
-        } else if (sum == max_sum && length > max_len) {
-            max_sum = sum;
-            max_len = length;
-            min_index = index;
-        }
-        
+
+        len = 0;
         sum = 0;
-        index = 0;
-        length = 0;
     }
     
     vector<int> result;
-
-    for (int j = min_index; j < max_len; j++) {
+    
+    for (int j = min_idx; j <= end_idx; ++j) {
         result.push_back(A[j]);
     }
     
     return result;
 }
+
