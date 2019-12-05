@@ -17,6 +17,30 @@ void arrange(vector<int> &A) {
    2) Now for the other half of the solution. A[i][i] is produced by dividing the initial equation by N. Now if we go back to our remainder formula r +an = x and divide by n we can represent this as r/n +an/n = x/n. We know that because of how integer division work that r/n will be a fraction and thus irrelevant and an/n = a. If we say that r was A[i] and a was A[A[i]] we see it still works and we get our solution.
    3) As mentioned previously in a comment the initial mod of A[A[i]] is pretty irrelevant because any smaller number being modded by a larger number will always produce the smaller number and all the values in the array are smaller than n by definition.
    */
+ 
+    /*
+    If you had extra space to do it, the problem will be very easy.
+Store a copy of Arr in B.
+
+And then for every element, do Arr[i] = B[B[i]]
+
+Lets restate what we just said for extra space :
+
+If we could somehow store 2 numbers in every index ( that is, Arr[i] can contain the old value and the new value somehow ), then the problem becomes very easy.
+NewValue of Arr[i] = OldValue of Arr[OldValue of Arr[i]]
+
+Now, we will do a slight trick to encode 2 numbers in one index.
+This trick assumes that N * N does not overflow.
+
+1) Increase every Array element Arr[i] by (Arr[Arr[i]] % n)*n.
+2) Divide every element by N.
+Given a number as
+
+   A = B + C * N   if ( B, C < N )
+   A % N = B
+   A / N = C
+We use this fact to encode 2 numbers into each element of Arr.
+*/
    
    int n = A.size();
     
