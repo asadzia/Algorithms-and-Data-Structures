@@ -52,6 +52,7 @@ int countOfAnagramSubstring(string str)
     for (auto it=mp.begin(); it!=mp.end(); it++) 
     { 
         int freq = it->second; 
+      // basically check how many pair can be generated with these number of substrings
         result += ((freq) * (freq-1))/2; 
     } 
     return result; 
