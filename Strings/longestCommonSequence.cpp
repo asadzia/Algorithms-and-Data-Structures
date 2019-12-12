@@ -88,7 +88,8 @@ int max (int x, int y) {
 
 int findLcs (string X, string Y, int m, int n) {
 
-  
+      // This is similar to traversing a BST recursively
+      // Basically we just find the longest sequence of chars which are similar between the 2 strings
       if (m == 0 || n == 0) {
         return 0;
       } else if (X[m - 1] == Y[n - 1]) {
