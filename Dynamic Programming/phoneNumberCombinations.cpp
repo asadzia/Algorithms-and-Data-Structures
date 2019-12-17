@@ -1,4 +1,4 @@
-/* Letter combinations of a phone number *
+/* Letter combinations of a phone number */
 
 #include <iostream>
 #include <string> 
