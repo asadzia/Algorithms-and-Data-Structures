@@ -19,6 +19,7 @@ The maximum sum path is 3-8-6.
 */
 
 // CPP prorgam for finding max path in matrix 
+// This method ensures that every row gets updated with the sum in each row iteration.
 #include <bits/stdc++.h> 
 #define N 4 
 #define M 6 
