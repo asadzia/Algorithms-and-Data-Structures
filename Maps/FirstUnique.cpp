@@ -1,5 +1,40 @@
 /* A program to find the first unique integer in an array */
 
+#include <bits/stdc++.h> 
+using namespace std; 
+ 
+// Note: Use long long int for latge numbers.
+// Unordered map used because it uses hashing with O[1)
+// Normal maps use red black trees.
+int firstNonRepeating(int arr[], int n) 
+{ 
+    // Insert all array elements in hash 
+    // table 
+    unordered_map<int, int> mp; 
+    for (int i = 0; i < n; i++) 
+        mp[arr[i]]++; 
+  
+    // Traverse array again and return 
+    // first element with count 1. 
+    // When the array is traversed again, the first int which has 
+	// a value of 1 in the map will be the result.
+    for (int i = 0; i < n; i++) 
+        if (mp[arr[i]] == 1) 
+            return arr[i]; 
+    return -1; 
+} 
+  
+// Driver code 
+int main() 
+{ 
+    int arr[] = { 9, 4, 9, 6, 7, 4 }; 
+    int n = sizeof(arr) / sizeof(arr[0]); 
+    cout << firstNonRepeating(arr, n); 
+    return 0; 
+} 
+
+/* ALTERNATE
+
 #include <iostream>
 #include <map>
 #include <utility>
@@ -49,6 +84,7 @@ int main ()
 
 	return 0;
 }
+*/
 
 
 /*
