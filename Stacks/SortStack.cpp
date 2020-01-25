@@ -125,3 +125,48 @@ int main ()
 	return 0;
 }
 
+
+// STL Impementation:
+
+/*The structure of the class is
+class SortedStack{
+public:
+	stack<int> s;
+	void sort();
+};
+*/
+
+/* The below method sorts the stack s 
+you are required to complete the below method */
+
+/*
+stack<int> Insert (int val, stack<int> &s) {
+    
+    if (s.empty()) {
+        s.push(val);
+        return s;
+    }
+    
+    else if (s.top() > val) {
+        int x = s.top();
+        s.pop();
+        Insert(val, s);
+        s.push(x);
+    } else {
+        s.push(val);
+    }
+    
+    return s;
+}
+
+void SortedStack :: sort()
+{
+   if (!s.empty()) {
+       int x = s.top();
+       s.pop();
+       sort();
+       s = Insert(x, s);
+   }
+}
+
+*/
