@@ -1,5 +1,5 @@
 /*
-* A function to rotate a string in C.
+* A function to rotate a string in C. Rotates to the right!
 *
 *
 *
