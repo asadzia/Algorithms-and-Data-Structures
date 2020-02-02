@@ -100,3 +100,78 @@ void Graph::dijkstra (int src)
 
 	printShortestPaths(dist);
 }
+
+/*
+
+#include <iostream>
+#include <queue>
+#include <list>
+#include <vector>
+#include <functional>
+#include <climits>
+
+using namespace std;
+
+struct Vertex {
+  int ID;
+  int weight;
+  Vertex(int x, int y):ID(x), weight(y){};
+};
+
+class Graph {
+  public:
+    // adjacency list
+    list<Vertex> *adj;
+
+    // minimum heap
+    priority_queue<Vertex, vector<Vertex>, greater<Vertex> > minHeap;
+
+    // Total vertices
+    int V;
+
+    Graph(int vertices);
+    ~Graph();
+    void createAdjacencyList (int src, int dest, int weight);
+    void shortestPath (Vertex startNode);
+};
+
+Graph::Graph(int vertices) {
+  this->adj = new list<Vertex> [vertices];
+  this->V = vertices;
+}
+
+Graph::~Graph () {
+  // free up the adjacency list
+    delete adj;
+}
+
+void Graph::createAdjacencyList(int src, int dest, int weight) {
+  adj[src].push_back(Vertex(dest, weight));
+}
+
+void Graph::shortestPath(Vertex startNode) {
+
+  vector<int> distances(this->V, INT_MAX);
+
+  distances[startNode.ID] = startNode.weight;
+
+  minHeap.push(startNode);
+
+  while (!minHeap.empty()) {
+    Vertex x = minHeap.top();
+    minHeap.pop();
+
+    list<Vertex>::iterator it;
+
+    for (it = adj[x.ID].begin(); it != adj[x.ID].end(); ++it) {
+
+      if (distances[it->ID] > it->weight + x.weight) {
+        distances[it->ID] = x.weight + it->weight;
+        it->weight = distances[it->ID];
+        minHeap.push(*it);
+      }
+    }
+  }
+}
+
+*/
