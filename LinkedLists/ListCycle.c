@@ -182,3 +182,29 @@ int main ()
 	return 0;
 
 }
+
+/*
+
+ListNode* Solution::solve(ListNode* A) {
+    
+    unordered_map<ListNode*, int> mp;
+    
+    ListNode* curA = A, *last = NULL;
+    
+    while (curA != NULL) {
+        
+        if (mp.find(curA) == mp.end()) {
+            // Node doesnt exist in the map
+            mp[curA]++;
+            last = curA;
+            curA = curA->next;
+        } else {
+            // Node Exists, hence theres a loop
+            last->next = NULL;
+            break;
+        }
+    }
+    return A;
+}
+
+*/
