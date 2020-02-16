@@ -1,4 +1,5 @@
 // Code for minimum number of conversions needed to convert to the required currency
+// Note: For finding the maximum value (arbitrage) after performing currency conversions, irrespective of the number of conversions, just collect all the results in a priority queue and return the result
 
 #include <iostream>
 #include <vector>
