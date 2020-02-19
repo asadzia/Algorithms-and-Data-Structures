@@ -182,3 +182,16 @@ int main ()
 	}
 	return 0;
 }	
+
+/* CPP Implementation
+
+    int n = abs(count1 - count2);
+    count = n;
+    
+    if (count1 > count2) {
+        cur1 = head1;
+    } else {
+        cur1 = head2;
+    }
+    
+ */
