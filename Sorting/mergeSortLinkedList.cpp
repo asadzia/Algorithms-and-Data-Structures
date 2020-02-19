@@ -1,5 +1,3 @@
-// Merge Sorting a Linked List
-
 // Merge Sort Linked list
 
 #include <iostream>
@@ -13,7 +11,6 @@ struct Node {
 };
 
 /*
-Why init fast pointer with head->next?
 Because we need (middle -1) element (one before the middle of linked list), so that we can break the list in to two halves and the second half starts from the mid of the original list.
 If we initialize fast with source itself then we need to maintain extra 'previous' of slow pointer as I said we need element just before the middle node to divide the list into two halves.
 */
@@ -22,13 +19,9 @@ void frontBackSplit (Node* head, Node** front, Node** back) {
   Node* fast = head->next;
   Node* slow = head;
 
-  while (fast != NULL) {
-
-    fast = fast->next;
-    if (fast != NULL) {
+  while (fast != NULL && fast->next != NULL) {
       slow = slow->next;
-      fast = fast->next;
-    }
+      fast = fast->next->next;   
   }
 
   *front = head;
@@ -36,6 +29,7 @@ void frontBackSplit (Node* head, Node** front, Node** back) {
   slow->next = NULL;
 }
 
+// Using pointer to sort through the list
 Node* SortedMerge(Node* a, Node* b) {
 
   Node* result = NULL;
